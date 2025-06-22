@@ -1,0 +1,123 @@
+/* Reset e fonte */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #ff416c, #8e2de2, #1e90ff); /* Degradê estilo imagem */
+  background-size: 200% 200%;
+  animation: gradientAnimation 10s ease infinite;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* Animação do degradê */
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Container do app */
+.App {
+  max-width: 900px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1); /* Levemente transparente para deixar o degradê visível */
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem;
+  backdrop-filter: blur(10px);
+}
+
+/* Título */
+h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+/* Layout do jogo */
+.game {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.game-info {
+  text-align: left;
+  color: #fff;
+}
+
+.game-info div {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.game-info button {
+  margin-bottom: 0.5rem;
+  padding: 8px 14px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-weight: 500;
+  color: #fff;
+}
+
+.game-info button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Tabuleiro */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 90px);
+  gap: 12px;
+}
+
+.square {
+  width: 90px;
+  height: 90px;
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  color: #2c3e50;
+}
+
+.square:hover {
+  background-color: rgba(255, 255, 255, 1);
+  transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .board {
+    grid-template-columns: repeat(3, 70px);
+  }
+
+  .square {
+    width: 70px;
+    height: 70px;
+    font-size: 1.5rem;
+  }
+
+  .App {
+    padding: 1.2rem;
+  }
+}
